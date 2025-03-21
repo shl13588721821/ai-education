@@ -1,0 +1,281 @@
+/* 基础样式 */
+:root {
+    --primary-color: #3b82f6;
+    --primary-dark: #2563eb;
+    --background-light: #ffffff;
+    --background-dark: #1a1a1a;
+    --text-light: #333333;
+    --text-dark: #ffffff;
+    --card-background-light: #ffffff;
+    --card-background-dark: #2d2d2d;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--text-light);
+    background-color: var(--background-light);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-theme {
+    color: var(--text-dark);
+    background-color: var(--background-dark);
+}
+
+/* 导航栏样式 */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--background-light);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    transition: background-color 0.3s;
+}
+
+.dark-theme .navbar {
+    background-color: var(--background-dark);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.nav-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0.5rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.nav-links {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: inherit;
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: color 0.3s;
+}
+
+.nav-link:hover {
+    color: var(--primary-color);
+}
+
+/* 头部区域样式 */
+.hero {
+    padding: 4rem 1rem 2rem;
+    text-align: center;
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    color: white;
+}
+
+.hero h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.hero p {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+/* 主要内容区域样式 */
+.section {
+    padding: 4rem 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 360px);
+    gap: 2rem;
+    width: 100%;
+    justify-content: start;
+}
+
+.card {
+    background-color: var(--card-background-light);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 360px;
+    max-width: 100%;
+}
+
+.dark-theme .card {
+    background-color: var(--card-background-dark);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.card-image {
+    width: 100%;
+    height: 120px;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #f3f4f6;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.site-icon {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 8px;
+}
+
+.card h3 {
+    width: 100%;
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+    color: var(--text-light);
+}
+
+.dark-theme .card h3 {
+    color: var(--text-dark);
+}
+
+.card p {
+    width: 100%;
+    font-size: 0.9rem;
+    color: var(--text-light);
+    opacity: 0.8;
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+}
+
+.dark-theme .card p {
+    color: var(--text-dark);
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 1rem 0;
+}
+
+.tag {
+    padding: 0.3rem 0.8rem;
+    background-color: rgba(59, 130, 246, 0.1);
+    color: var(--primary-color);
+    border-radius: 2rem;
+    font-size: 0.875rem;
+}
+
+.visit-btn {
+    width: 100%;
+    padding: 0.8rem;
+    background-color: var(--primary-color);
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 0.5rem;
+    transition: background-color 0.3s;
+}
+
+.visit-btn:hover {
+    background-color: var(--primary-dark);
+}
+
+/* 主题切换按钮 */
+.theme-toggle {
+    background: none;
+    border: none;
+    color: inherit;
+    cursor: pointer;
+    padding: 0.5rem;
+    font-size: 1.2rem;
+}
+
+/* 回到顶部按钮 */
+.back-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background-color: var(--primary-color);
+    color: white;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s;
+}
+
+.back-to-top:hover {
+    background-color: var(--primary-dark);
+}
+
+.back-to-top.visible {
+    display: flex;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+    
+    .hero h1 {
+        font-size: 2rem;
+    }
+    
+    .hero p {
+        font-size: 1rem;
+    }
+    
+    .section {
+        padding: 2rem 1rem;
+    }
+    
+    .card-container {
+        grid-template-columns: 1fr;
+        justify-content: center;
+    }
+    
+    .card {
+        width: 100%;
+    }
+} 
